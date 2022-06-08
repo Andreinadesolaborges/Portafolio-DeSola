@@ -41,6 +41,7 @@ nav ul {
 
 nav ul li{
     display: inline-block;
+    
    
 }
 
@@ -51,7 +52,7 @@ nav ul li a {
     font-size: 1.3rem;
     font-family: Aeonik-Bold;
     margin: 1.25rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em; 
 }
 
 .menuMobile{
@@ -88,7 +89,7 @@ a{
 
 span {
     vertical-align: middle;
-    border-bottom: solid 0.0625rem #E5CC87;
+    border-bottom: 0.0625rem solid #E5CC87;
 }
 
 ol li{
@@ -110,7 +111,9 @@ ol {
 }
 
 .logoImg {
-    width: 3.4rem;
+    transition: .3s;
+    width: 57px;
+    height: 57px;
 }
 
 /*Main*/
@@ -232,10 +235,12 @@ p {
     border-radius: 6.25rem;
     text-transform: uppercase;
     margin: 2.5rem;
+    transition: .5s;
 }
 
 .linkBlanco{
     color: white;
+    border-bottom: 0px solid white;
 }
 
 .contenedorTrabajos{
@@ -300,11 +305,14 @@ p {
 
 .iconoRedes{
     margin: 0.62rem;
+    transition: .5s;
+    width: 29px;
 }
 
 .trabajoContenedor {
    padding: 1.25rem;
    width: 100%;
+   transition: .5s;
 }
 
 /*Estilo del footer*/
@@ -542,6 +550,118 @@ form {
     display: none;
 }
 
+/*Animaciones*/
+
+.flotar {
+    animation-name: flotar;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+    50% {
+        transform: translateY(-5px);
+        transform: scale(0.7);
+    }
+    100% {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.flotar2 {
+    animation-name: flotar2;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+}
+
+@keyframes flotar2 {
+    0% {
+        transform: translateY(0);
+        
+    }
+    50% {
+        transform: translateY(-5px);
+        
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.itemsMenu{
+    transition: .3s;
+}
+
+.itemsMenu:hover {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #E5CC87;
+    color: #E5CC87;
+}
+
+nav ul li:hover{
+    animation-name: animLink;
+    animation-iteration-count:3;
+    animation-duration: 1s;
+}
+
+@keyframes animLink{
+    0% {
+        transform: translateY(0);
+        transform: scale(1);
+        
+    }
+    50% {
+        transform: translateY(-2px);
+        transform: scale(1.05);
+    }
+    100% {
+        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+.animLinksAmarillo {
+    transition: .4s;
+}
+
+.animLinksAmarillo:hover {
+    transform: translateY(-3px);
+}
+
+.trabajoContenedor:hover{
+    transform: scale(0.95);
+}
+
+.btnMas:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+}
+
+.noBorderBottom {
+    border-bottom: none;
+}
+
+.contactoAnim {
+    transition: .5s;
+}
+
+.contactoAnim:hover {
+    transform: scale(0.95);
+    color: #E5CC87;
+}
+
+.iconoRedes:hover{
+    opacity: .5;
+    width: 28px;
+}
+
+
 
 /*Versiones de pantalla*/
 
@@ -734,8 +854,10 @@ form {
     }
 
     .logoImg {
-        width: 2.2rem;
+        width: 35px;
+        height: 35px;
     }
+
     .imagenAlien {
         padding: 1rem 1rem;
     }

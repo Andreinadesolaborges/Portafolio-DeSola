@@ -344,6 +344,7 @@ footer {
     padding: 3.1rem 0rem;
     border-top: 0.125rem solid white;
     border-bottom: 0.125rem solid white;
+    transition: .5s;
     
 }
 
@@ -367,8 +368,8 @@ footer {
     background-image: url(../img/bg-design.png);
     background-position: top right;
     background-repeat: no-repeat;
-  
 }
+
 .fondoDesarrollo{
     background-image: url(../img/bg-desarrollo.png);
     background-position: top right;
@@ -491,6 +492,7 @@ form {
     margin: 0 0 2.5rem 0;
     width: 12.5rem;
     margin-bottom: 0;
+    transition: .5s;
 }
 
 .btnBorrar {
@@ -659,6 +661,16 @@ nav ul li:hover{
 .iconoRedes:hover{
     opacity: .5;
     width: 28px;
+}
+
+.contenedorTrabajo:hover{
+    transform: scale(0.95);
+}
+
+.btnEnviar:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
 }
 
 
@@ -889,6 +901,7 @@ nav ul li:hover{
         flex-flow: column wrap;
         padding: 1.8rem 1.8rem;
         width: 100%;
+        
     }
     .tamImagenTrabajo{
         width: 100%;

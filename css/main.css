@@ -37,11 +37,12 @@ nav ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+    
 }
 
 nav ul li{
     display: inline-block;
-    
    
 }
 
@@ -454,7 +455,7 @@ select {
 
     text-align: left;
     font-size: 1.9rem;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, .4);
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
     background-color: rgba(0, 0, 0, 0) ;
@@ -602,7 +603,7 @@ form {
 .itemsMenu:hover {
     padding-bottom: 5px;
     border-bottom: 2px solid #E5CC87;
-    color: #E5CC87;
+    color: #E5CC87 !important; 
 }
 
 nav ul li:hover{
@@ -673,6 +674,24 @@ nav ul li:hover{
     transform: translateY(-5px);
 }
 
+a:hover {
+    color: #E5CC87;
+}
+
+.logoImg:hover{
+    animation-name: animLink;
+    animation-iteration-count:3;
+    animation-duration: 1s;
+}
+
+input:focus-visible {
+    outline: white auto 1px;
+}
+
+select:focus-visible {
+    outline: white auto 1px;
+}
+
 
 
 /*Versiones de pantalla*/
@@ -692,13 +711,6 @@ nav ul li:hover{
 
     .menuDesktop {
         display: none;
-    }
-
-    .seccionMobileTemp{
-        display: grid;
-        gap: 0;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 }
 

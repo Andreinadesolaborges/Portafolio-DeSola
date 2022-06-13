@@ -4,62 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!--Link del css-->
     <link rel="stylesheet" href="../css/main.css">
     <title>Portafolio - Desarrollo Web</title>
 </head>
 <body>
-      <!--Acá comienza el header del sitio con logo y links-->
+    <!--Acá comienza el header del sitio con logo y links-->
+    <!--Bootstrap Navbar-->
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="../index.html">
-                        <img class="logoImg" src="../img/Logo.svg" alt="Logo">
-                    </a>
-                </li>
-                <li class="menuDesktop">
-                    <a class="itemsMenu" href="design.html">Diseño Gráfico</a>
-                </li>
-                <li class="menuDesktop">
-                    <a class="itemsMenu" href="development.html">Desarrollo Web</a>
-                </li>
-                <li class="menuDesktop">
-                    <a class="itemsMenu" href="unity.html">Unity y videojuegos</a>
-                </li>
-                <li class="menuDesktop">
-                    <a class="itemsMenu" href="contact.html">Contáctame</a>
-                </li>
-                <li class="menuMobile">
-                    <img src="../img/iPhone13/menu.svg" alt="icono del menu">
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">
+                <img class="logoImg" src="../img/Logo.svg" alt="Logo">   
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../img/iPhone13/menu.svg" alt="icono del menu">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link text-white itemsMenu" href="design.html">Diseño Gráfico</a>
+                  </li>
+                  <li class="nav-item text-white">
+                    <a class="nav-link text-white itemsMenu" href="development.html">Desarrollo Web</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white itemsMenu" href="unity.html">Unity y videojuegos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white itemsMenu" href="contact.html">Contáctame</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
         </nav>
     </header>
-
-    <!--Menu temporal mobile-->
-    <div class="contenedorLinks seccionMobileTemp">
-        <ol>
-            <li class="animLinksAmarillo">
-                <a href="design.html">
-                    <img src="../img/eye.png" alt="Icono ver">
-                    <span>Diseño Gráfico</span>
-                </a>
-            </li>
-            <li class="animLinksAmarillo">
-                <a href="development.html">
-                    <img src="../img/eye.png" alt="Icono ver">
-                    <span>Desarrollo Web</span>
-                </a>
-            </li>
-            <li class="animLinksAmarillo">
-                <a href="unity.html">
-                    <img src="../img/eye.png" alt="Icono ver">
-                    <span>Desarrollo en Unity</span>
-                </a>
-            </li>
-        </ol>
-    </div>
 
     <div class="fondoDesarrollo"> 
 
@@ -81,14 +62,14 @@
                 <h3 class="lineaAbajo espacioTitulo">Trabajos de desarrollo</h3>
                 <div class="contenedorTrabajo">
                     <div class="contenedorImagen">
-                        <img class="tamImagenTrabajo" src="../img/placeholder.png" alt="">
+                        <img class="tamImagenTrabajo" src="../img/placeholder.png" alt="imagen del proyecto">
                     </div>
                     <div class="contenedorTextos">
                         <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">Título Lorem</h2>
                         <h2 class="alinearTextoIzq">Tipo Lorem ipsum dolor</h2>
                     </div>
                     <div class="contenedorLink animLinksAmarillo">
-                        <a href="#">
+                        <a href="proyecto.html">
                             <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
                             <span>Ver más detalles</span>
                         </a>
@@ -96,14 +77,14 @@
                 </div>
                 <div class="contenedorTrabajo noMarginTop">
                     <div class="contenedorImagen">
-                        <img class="tamImagenTrabajo" src="../img/placeholder.png" alt="">
+                        <img class="tamImagenTrabajo" src="../img/placeholder.png" alt="imagen del proyecto">
                     </div>
                     <div class="contenedorTextos">
                         <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">Título Lorem</h2>
                         <h2 class="alinearTextoIzq">Tipo Lorem ipsum dolor</h2>
                     </div>
                     <div class="contenedorLink animLinksAmarillo">
-                        <a href="#">
+                        <a href="proyecto.html">
                             <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
                             <span>Ver más detalles</span>
                         </a>
@@ -139,6 +120,7 @@
         <p>© ANDREINA DE SOLA - 2022</p>
         </div>  
     </footer>
-    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -241,7 +241,7 @@ p {
 
 .linkBlanco{
     color: white;
-    border-bottom: 0px solid white;
+    border-bottom: 0rem solid white;
 }
 
 .contenedorTrabajos{
@@ -307,7 +307,7 @@ p {
 .iconoRedes{
     margin: 0.62rem;
     transition: .5s;
-    width: 29px;
+    width: 1.81rem;
 }
 
 .trabajoContenedor {
@@ -332,6 +332,8 @@ footer {
 .elementoFooter{
     margin: 1.25rem;
 }
+
+
 
 .tipografiaBold {
     font-family: Aeonik-Bold, 'Times New Roman', Times, serif;
@@ -398,6 +400,7 @@ footer {
 
 .contenedorTextos{
     padding: 3.125rem;
+    width: 25rem;
 }
 
 .alinearTextoIzq {
@@ -515,7 +518,7 @@ form {
     width: 100%;
 }
 .tamImagenTrabajo{
-    width: 300px;
+    width: 18.75rem;
 }
 
 /*Versión de grid sección Unity para el reto semanal*/
@@ -601,8 +604,8 @@ form {
 }
 
 .itemsMenu:hover {
-    padding-bottom: 5px;
-    border-bottom: 2px solid #E5CC87;
+    padding-bottom: 0.3125rem;
+    border-bottom: 0.125rem solid #E5CC87;
     color: #E5CC87 !important; 
 }
 
@@ -692,6 +695,37 @@ select:focus-visible {
     outline: white auto 1px;
 }
 
+/*Carrusel detalles Bootstrap*/
+
+.carousel-control-prev{
+    background-color: black;
+    top: 50%;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    opacity: .3;
+}
+
+.carousel-control-prev:active{
+    opacity: .5;
+}
+
+.carousel-control-next {
+    background-color: black;
+    top: 50%;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    opacity: .3;
+}
+
+.carousel-control-next:active{
+    opacity: .5;
+}
+
+.noBorderTop {
+    border-top: none;
+}
 
 
 /*Versiones de pantalla*/
@@ -784,6 +818,9 @@ select:focus-visible {
         align-items: center ;
         padding: 0rem 2.8rem;
     }
+    ol, ul{
+        padding-left: 0;
+    }
 
 }
 @media screen and (max-width: 768px){
@@ -842,7 +879,7 @@ select:focus-visible {
     .contenedorPrincipal{
         background-size: contain;
         flex-flow: column wrap;
-        gap: 20px;
+        gap: 1.25rem;
         height: 20rem;
     }
 
@@ -911,17 +948,20 @@ select:focus-visible {
 
     .contenedorTrabajo{
         flex-flow: column wrap;
-        padding: 1.8rem 1.8rem;
+        padding: 2.2rem 2.2rem;
         width: 100%;
         
     }
     .tamImagenTrabajo{
         width: 100%;
+        
     }
     .contenedorTextos{
         margin-right: auto;
-        padding: 1.8rem 0 1.8rem 0;
+        padding: 1.2rem 0 1.2rem 0;
+        width: 100%;
     }
+
     .tamOjo{
         width: 1.2rem;
     }
@@ -954,6 +994,16 @@ select:focus-visible {
         font-size: 1.5rem;
     }
 
+    .carousel-control-next{
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-control-prev{
+        width: 50px;
+        height: 50px;
+    }
+
 }
 @media screen and (max-width: 480px){
    
@@ -982,6 +1032,10 @@ select:focus-visible {
     .btnEnviar{
         width: 8.5rem;
         padding: 1.5rem 0;
+    }
+
+    .tamOjo{
+        width: .8rem;
     }
     
 }

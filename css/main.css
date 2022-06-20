@@ -699,7 +699,7 @@ select:focus-visible {
 
 .carousel-control-prev{
     background-color: black;
-    top: 50%;
+    top: 40%;
     height: 100px;
     width: 100px;
     border-radius: 100px;
@@ -712,7 +712,7 @@ select:focus-visible {
 
 .carousel-control-next {
     background-color: black;
-    top: 50%;
+    top: 40%;
     height: 100px;
     width: 100px;
     border-radius: 100px;

@@ -1,11 +1,5 @@
 @charset "UTF-8";
-/*reset*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-/*Cargar tipografías locales*/
+/*Tipografías del proyecto*/
 @font-face {
   font-family: "Aeonik-Bold";
   src: url(../fonts/Aeonik-Bold.otf) format("opentype"); }
@@ -17,6 +11,12 @@
 @font-face {
   font-family: "TAN-Waverly";
   src: url(../fonts/TAN-WAVERLY.otf) format("opentype"); }
+
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 /* Para el fondo negro*/
 body {
@@ -41,11 +41,10 @@ header {
         font-family: Aeonik-Bold;
         margin: 1.25rem;
         letter-spacing: 0.1em; }
-
-.logoImg {
-  transition: .3s;
-  width: 57px;
-  height: 57px; }
+      header nav ul li:hover {
+        animation-name: animLink;
+        animation-iteration-count: 3;
+        animation-duration: 1s; }
 
 /* Estilos textos*/
 /*Tipos de títulos*/
@@ -85,6 +84,10 @@ a {
 span {
   vertical-align: middle;
   border-bottom: 0.0625rem solid #E5CC87; }
+
+/*Detalles tipográficos*/
+.tipografiaBold {
+  font-family: Aeonik-Bold, 'Times New Roman', Times, serif; }
 
 /*Grid index*/
 /*Versión index reto grid*/
@@ -144,108 +147,56 @@ span {
     /*vertical*/
     align-self: center;
     padding: 0 0 0 6.25rem; }
-
-/*Detalles visuales*/
-.lineaAbajo {
-  border-bottom: solid 0.125rem white;
-  display: inline-block;
-  padding-bottom: 1.9rem;
-  margin-bottom: 1.9rem;
-  margin-top: 1.9rem; }
-
-.espacioTextoMi {
-  margin: .625rem 0 2rem 0; }
-
-.imagenRetrato {
-  width: 100%;
-  margin-left: 1.9rem;
-  grid-area: imagenRetrato;
-  /*horizontal*/
-  justify-self: center;
-  /*vertical*/
-  align-self: center;
-  padding: 0 6.25rem 0 0; }
-
-.tamImagen {
-  width: 100%; }
-
-.btnMas {
-  text-align: center;
-  border: 0.125rem solid white;
-  width: 15rem;
-  padding: 2.5rem 0rem;
-  border-radius: 6.25rem;
-  text-transform: uppercase;
-  margin: 2.5rem;
-  transition: .5s; }
-
-.linkBlanco {
-  color: white;
-  border-bottom: 0rem solid white; }
-
-.contenedorTrabajos {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  grid-area: contenedorTrabajos; }
-
-.contenedorGridTrabajos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "trabajoUno trabajoDos" "trabajoTres trabajoCuatro";
-  justify-content: center;
-  justify-items: center; }
-
-.trabajoUno {
-  grid-area: trabajoUno;
-  /*horizontal*/
-  justify-self: center;
-  /*vertical*/
-  align-self: center;
-  width: 100%; }
-
-.trabajoDos {
-  grid-area: trabajoDos;
-  /*horizontal*/
-  justify-self: center;
-  /*vertical*/
-  align-self: center;
-  width: 100%; }
-
-.trabajoTres {
-  grid-area: trabajoTres;
-  /*horizontal*/
-  justify-self: center;
-  /*vertical*/
-  align-self: center;
-  width: 100%; }
-
-.trabajoCuatro {
-  grid-area: trabajoCuatro;
-  /*horizontal*/
-  justify-self: center;
-  /*vertical*/
-  align-self: center;
-  width: 100%; }
-
-.tamImagenTrabajos {
-  width: 100%; }
-
-.estiloTituloTrabajos {
-  text-align: left;
-  margin-top: 1.9rem;
-  margin-bottom: 1.25rem; }
-
-.iconoRedes {
-  margin: 0.62rem;
-  transition: .5s;
-  width: 1.81rem; }
-
-.trabajoContenedor {
-  padding: 1.25rem;
-  width: 100%;
-  transition: .5s; }
+  .contenedorGrid .imagenRetrato {
+    width: 100%;
+    margin-left: 1.9rem;
+    grid-area: imagenRetrato;
+    /*horizontal*/
+    justify-self: center;
+    /*vertical*/
+    align-self: center;
+    padding: 0 6.25rem 0 0; }
+  .contenedorGrid .contenedorTrabajos {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    grid-area: contenedorTrabajos; }
+    .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "trabajoUno trabajoDos" "trabajoTres trabajoCuatro";
+      justify-content: center;
+      justify-items: center;
+      /*Contenedores trabajos*/ }
+      .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos .trabajoUno {
+        grid-area: trabajoUno;
+        /*horizontal*/
+        justify-self: center;
+        /*vertical*/
+        align-self: center;
+        width: 100%; }
+      .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos .trabajoDos {
+        grid-area: trabajoDos;
+        /*horizontal*/
+        justify-self: center;
+        /*vertical*/
+        align-self: center;
+        width: 100%; }
+      .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos .trabajoTres {
+        grid-area: trabajoTres;
+        /*horizontal*/
+        justify-self: center;
+        /*vertical*/
+        align-self: center;
+        width: 100%; }
+      .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos .trabajoCuatro {
+        grid-area: trabajoCuatro;
+        /*horizontal*/
+        justify-self: center;
+        /*vertical*/
+        align-self: center;
+        width: 100%; }
 
 /*Estilo del footer*/
 footer {
@@ -257,13 +208,72 @@ footer {
   background-image: url(../img/bgFooter.png);
   background-position: top;
   background-repeat: no-repeat; }
+  footer .elementoFooter {
+    margin: 1.25rem; }
 
-.elementoFooter {
-  margin: 1.25rem; }
+/* Tamaños logo, iconos/ imágenes*/
+.logoImg {
+  transition: 0.3s;
+  width: 57px;
+  height: 57px; }
 
-.tipografiaBold {
-  font-family: Aeonik-Bold, 'Times New Roman', Times, serif; }
+.tamImagen {
+  width: 100%; }
 
+.tamImagenTrabajos {
+  width: 100%; }
+
+.iconoRedes {
+  margin: 0.62rem;
+  transition: 0.5s;
+  width: 1.81rem; }
+  .iconoRedes:hover {
+    opacity: .5;
+    width: 28px; }
+
+/*Detalles visuales*/
+.lineaAbajo {
+  border-bottom: 0.125rem solid white;
+  display: inline-block;
+  padding-bottom: 1.9rem;
+  margin-bottom: 1.9rem;
+  margin-top: 1.9rem; }
+
+.espacioTextoMi {
+  margin: .625rem 0 2rem 0; }
+
+.linkBlanco {
+  color: white;
+  border-bottom: 0rem solid white; }
+
+.estiloTituloTrabajos {
+  text-align: left;
+  margin-top: 1.9rem;
+  margin-bottom: 1.25rem; }
+
+.trabajoContenedor {
+  padding: 1.25rem;
+  width: 100%;
+  transition: 0.5s; }
+  .trabajoContenedor:hover {
+    transform: scale(0.95); }
+
+/*Botones detalles*/
+.btnMas {
+  text-align: center;
+  border: 0.125rem solid white;
+  width: 15rem;
+  padding: 2.5rem 0rem;
+  border-radius: 6.25rem;
+  text-transform: uppercase;
+  margin: 2.5rem;
+  transition: 0.5s; }
+  .btnMas:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px); }
+
+/*Secciones*/
 .contenedorTrabajo {
   display: flex;
   flex-flow: row wrap;
@@ -272,7 +282,7 @@ footer {
   padding: 3.1rem 0rem;
   border-top: 0.125rem solid white;
   border-bottom: 0.125rem solid white;
-  transition: .5s; }
+  transition: 0.5s; }
 
 .espacioTitulo {
   margin: 4.4rem 0rem; }
@@ -326,6 +336,7 @@ footer {
 .contenedorEstrella2 {
   margin: 2.2rem 0; }
 
+/*Formulario*/
 legend {
   text-align: left;
   font-size: 1.9rem;
@@ -358,6 +369,8 @@ input {
   padding-bottom: 1.9rem;
   border-bottom: 0.125rem solid white;
   width: 100%; }
+  input:focus-visible {
+    outline: white auto 1px; }
 
 select {
   text-align: left;
@@ -370,6 +383,8 @@ select {
   padding-bottom: 1.9rem;
   border-bottom: 0.125rem solid white;
   width: 100%; }
+  select:focus-visible {
+    outline: white auto 1px; }
 
 .espacioTextoContacto {
   margin: 2.5rem 0; }
@@ -394,7 +409,7 @@ form {
   margin: 0 0 2.5rem 0;
   width: 12.5rem;
   margin-bottom: 0;
-  transition: .5s; }
+  transition: 0.5s; }
 
 .btnBorrar {
   color: #E5CC87;
@@ -441,9 +456,6 @@ form {
   grid-area: contenedorSeccionUnity;
   padding: 7.5rem 10.625rem; }
 
-.seccionMobileTemp {
-  display: none; }
-
 /*Animaciones*/
 .flotar {
   animation-name: flotar;
@@ -475,17 +487,11 @@ form {
     transform: translateY(0); } }
 
 .itemsMenu {
-  transition: .3s; }
-
-.itemsMenu:hover {
-  padding-bottom: 0.3125rem;
-  border-bottom: 0.125rem solid #E5CC87;
-  color: #E5CC87 !important; }
-
-nav ul li:hover {
-  animation-name: animLink;
-  animation-iteration-count: 3;
-  animation-duration: 1s; }
+  transition: 0.3s; }
+  .itemsMenu:hover {
+    padding-bottom: 0.3125rem;
+    border-bottom: 0.125rem solid #E5CC87;
+    color: #E5CC87 !important; }
 
 @keyframes animLink {
   0% {
@@ -499,32 +505,18 @@ nav ul li:hover {
     transform: scale(1); } }
 
 .animLinksAmarillo {
-  transition: .4s; }
-
-.animLinksAmarillo:hover {
-  transform: translateY(-3px); }
-
-.trabajoContenedor:hover {
-  transform: scale(0.95); }
-
-.btnMas:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-5px); }
+  transition: 0.4s; }
+  .animLinksAmarillo:hover {
+    transform: translateY(-3px); }
 
 .noBorderBottom {
   border-bottom: none; }
 
 .contactoAnim {
-  transition: .5s; }
-
-.contactoAnim:hover {
-  transform: scale(0.95);
-  color: #E5CC87; }
-
-.iconoRedes:hover {
-  opacity: .5;
-  width: 28px; }
+  transition: 0.5s; }
+  .contactoAnim:hover {
+    transform: scale(0.95);
+    color: #E5CC87; }
 
 .contenedorTrabajo:hover {
   transform: scale(0.95); }
@@ -541,12 +533,6 @@ a:hover {
   animation-name: animLink;
   animation-iteration-count: 3;
   animation-duration: 1s; }
-
-input:focus-visible {
-  outline: white auto 1px; }
-
-select:focus-visible {
-  outline: white auto 1px; }
 
 /*Carrusel detalles Bootstrap*/
 .carousel-control-prev {
@@ -576,7 +562,7 @@ select:focus-visible {
 
 /*Versiones de pantalla*/
 @media screen and (max-width: 1301px) {
-  nav ul {
+  header nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center; } }
@@ -598,7 +584,7 @@ select:focus-visible {
     width: 12rem;
     padding: 2rem 0rem;
     margin: 2rem; }
-  .imagenRetrato {
+  .contenedorGrid .imagenRetrato {
     padding: 0 3rem 0 0;
     margin-left: 1rem; }
   header {
@@ -621,7 +607,7 @@ select:focus-visible {
     flex-flow: column wrap;
     align-items: center;
     padding: 0rem 2.8rem; }
-  ol, ul {
+  .contenedorGrid .contenedorLinks ol, header nav ul {
     padding-left: 0; } }
 
 @media screen and (max-width: 768px) {
@@ -639,7 +625,7 @@ select:focus-visible {
     line-height: 1.3rem; }
   header {
     padding: 3rem 2.8rem; }
-  .imagenRetrato {
+  .contenedorGrid .imagenRetrato {
     padding: 0 2.8rem 0 2.8rem;
     margin-left: 0rem; }
   .contenedorGrid .contenedorSobreMi {
@@ -652,15 +638,15 @@ select:focus-visible {
   .contenedorGrid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "contenedorPrincipal contenedorPrincipal contenedorPrincipal contenedorPrincipal" "contenedorLinks contenedorLinks contenedorLinks contenedorLinks" "imagenRetrato imagenRetrato imagenRetrato imagenRetrato" "contenedorSobreMi contenedorSobreMi contenedorSobreMi contenedorSobreMi" "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos"; }
-  .contenedorPrincipal {
+  .contenedorGrid .contenedorPrincipal {
     background-size: contain;
     flex-flow: column wrap;
     gap: 1.25rem;
     height: 20rem; }
-  .contenedorHijo {
+  .contenedorGrid .contenedorPrincipal .contenedorHijo {
     text-align: center;
     width: 80%; }
-  .contenedorEstrella {
+  .contenedorGrid .contenedorPrincipal .contenedorEstrella {
     display: none; }
   .contenidoSobreMi {
     display: flex;
@@ -668,7 +654,7 @@ select:focus-visible {
     align-items: center; }
   .contenedorLink {
     margin-right: auto; }
-  .contenedorGridTrabajos {
+  .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos {
     grid-template-columns: 1fr;
     grid-template-areas: "trabajoUno" "trabajoDos" "trabajoTres" "trabajoCuatro";
     padding: 0 2.8rem 0 2.8rem; }

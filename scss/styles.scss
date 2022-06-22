@@ -1,4 +1,10 @@
 
+//Imports
+
+@import "utilities/variables";
+@import "utilities/tipografias";
+
+
 /*reset*/
 *{
     margin: 0;
@@ -6,25 +12,9 @@
     box-sizing: border-box;
 }
 
-/*Cargar tipografías locales*/
-@font-face {
-    font-family: "Aeonik-Bold";
-    src: url(../fonts/Aeonik-Bold.otf) format("opentype");
-}
-
-@font-face {
-    font-family: "Aeonik-Light";
-    src: url(../fonts/Aeonik-Light.otf) format("opentype");
-}
-
-@font-face {
-    font-family: "TAN-Waverly";
-    src: url(../fonts/TAN-WAVERLY.otf) format("opentype");
-}
-
 /* Para el fondo negro*/
 body {
-    background-color: black;
+    background-color: $backgroundGeneral;
 }
 
 /*Estilos para el menú*/
@@ -41,22 +31,22 @@ header{
                 display: inline-block;
                 a {
                     text-decoration: none;
-                    color: white;
+                    color: $primaryColor;
                     text-transform: uppercase;
-                    font-size: 1.3rem;
+                    font-size: $size-0;
                     font-family: Aeonik-Bold;
                     margin: 1.25rem;
                     letter-spacing: 0.1em; 
                 }
+
+                &:hover{
+                    animation-name: animLink;
+                    animation-iteration-count:3;
+                    animation-duration: 1s;
+                }
             }
         }
     }
-}
-
-.logoImg {
-    transition: .3s;
-    width: 57px;
-    height: 57px;
 }
 
 /* Estilos textos*/
@@ -64,48 +54,51 @@ header{
 
 h1 {
     font-family: TAN-Waverly, Arial, Helvetica, sans-serif;
-    color: white;
+    color: $primaryColor;
     text-transform: uppercase;
-    font-size: 2.5rem;
+    font-size: $size-4;
     text-align: center;
 }
 
 h2 {
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
-    font-size: 1.9rem;
-    color: white;
+    font-size: $size-2;
+    color: $primaryColor;
     text-align: center;
 }
 
 h3{
-    color: white;
-    font-size: 2rem;
+    color: $primaryColor;
+    font-size: $size-3;
     font-family: TAN-Waverly, Arial, Helvetica, sans-serif;
 }
 
 /*Párrafo*/
 p {
-    color: white;
+    color: $primaryColor;
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
+    font-size: $size-1;
     line-height: 1.9rem;
 
 }
 
-
-
 /*Vínculos*/
 a{
-    color: #E5CC87;
+    color: $secondaryColor;
     font-family: Aeonik-Light;
-    font-size: 1.5rem;
+    font-size: $size-1;
     text-decoration: none;
     line-height: 1.9rem;
 }
 
 span {
     vertical-align: middle;
-    border-bottom: 0.0625rem solid #E5CC87;
+    border-bottom: 0.0625rem solid $borderColorSecondary;
+}
+
+/*Detalles tipográficos*/
+.tipografiaBold {
+    font-family: Aeonik-Bold, 'Times New Roman', Times, serif;
 }
 
 /*Grid index*/
@@ -187,132 +180,67 @@ span {
         align-self: center;
         padding: 0 0 0 6.25rem;
     } 
-}
+    .imagenRetrato {
+        width: 100%;
+        margin-left: 1.9rem;
+        grid-area: imagenRetrato;
+         /*horizontal*/
+         justify-self: center;
+         /*vertical*/
+         align-self: center;
+         padding: 0 6.25rem 0 0;
+    }
+    .contenedorTrabajos{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        grid-area: contenedorTrabajos; 
 
+        .contenedorGridTrabajos{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "trabajoUno trabajoDos"
+                                 "trabajoTres trabajoCuatro";
+            justify-content: center;
+            justify-items: center;
+            
+            /*Contenedores trabajos*/
 
-
-
-/*Detalles visuales*/
-.lineaAbajo{
-    border-bottom: solid 0.125rem white;
-    display: inline-block;
-    padding-bottom: 1.9rem;
-    margin-bottom: 1.9rem;
-    margin-top: 1.9rem;
-
-}
-
-
-
-.espacioTextoMi {
-    margin: .625rem 0 2rem 0;
-}
-
-
-
-.imagenRetrato {
-    width: 100%;
-    margin-left: 1.9rem;
-    grid-area: imagenRetrato;
-     /*horizontal*/
-     justify-self: center;
-     /*vertical*/
-     align-self: center;
-     padding: 0 6.25rem 0 0;
-}
-
-.tamImagen {
-    width: 100%;
-}
-
-
-
-.btnMas{
-    text-align: center;
-    border: 0.125rem solid white;
-    width: 15rem;
-    padding: 2.5rem 0rem;
-    border-radius: 6.25rem;
-    text-transform: uppercase;
-    margin: 2.5rem;
-    transition: .5s;
-}
-
-.linkBlanco{
-    color: white;
-    border-bottom: 0rem solid white;
-}
-
-.contenedorTrabajos{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    grid-area: contenedorTrabajos; 
-}
-
-.contenedorGridTrabajos{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "trabajoUno trabajoDos"
-                         "trabajoTres trabajoCuatro";
-    justify-content: center;
-    justify-items: center;    
-}
-
-.trabajoUno {
-    grid-area: trabajoUno;
-    /*horizontal*/
-    justify-self: center;
-    /*vertical*/
-    align-self: center;
-    width: 100%;
-}
-.trabajoDos {
-    grid-area: trabajoDos;
-    /*horizontal*/
-    justify-self: center;
-    /*vertical*/
-    align-self: center;
-    width: 100%;
-}
-.trabajoTres {
-    grid-area: trabajoTres;
-    /*horizontal*/
-    justify-self: center;
-    /*vertical*/
-    align-self: center;
-    width: 100%;
-}
-.trabajoCuatro {
-    grid-area: trabajoCuatro;
-    /*horizontal*/
-    justify-self: center;
-    /*vertical*/
-    align-self: center;
-    width: 100%;
-}
-
-.tamImagenTrabajos{
-    width: 100%;
-}
-
-.estiloTituloTrabajos{
-    text-align: left;
-    margin-top: 1.9rem;
-    margin-bottom: 1.25rem;
-}
-
-.iconoRedes{
-    margin: 0.62rem;
-    transition: .5s;
-    width: 1.81rem;
-}
-
-.trabajoContenedor {
-   padding: 1.25rem;
-   width: 100%;
-   transition: .5s;
+            .trabajoUno {
+                grid-area: trabajoUno;
+                /*horizontal*/
+                justify-self: center;
+                /*vertical*/
+                align-self: center;
+                width: 100%;
+            }
+            .trabajoDos {
+                grid-area: trabajoDos;
+                /*horizontal*/
+                justify-self: center;
+                /*vertical*/
+                align-self: center;
+                width: 100%;
+            }
+            .trabajoTres {
+                grid-area: trabajoTres;
+                /*horizontal*/
+                justify-self: center;
+                /*vertical*/
+                align-self: center;
+                width: 100%;
+            }
+            .trabajoCuatro {
+                grid-area: trabajoCuatro;
+                /*horizontal*/
+                justify-self: center;
+                /*vertical*/
+                align-self: center;
+                width: 100%;
+            }
+        }
+    }
 }
 
 /*Estilo del footer*/
@@ -326,17 +254,99 @@ footer {
     background-image: url(../img/bgFooter.png);
     background-position: top;
     background-repeat: no-repeat;
+
+    .elementoFooter{
+        margin: 1.25rem;
+    }
+
 }
 
-.elementoFooter{
-    margin: 1.25rem;
+/* Tamaños logo, iconos/ imágenes*/
+
+.logoImg {
+    transition: $transition-1;
+    width: 57px;
+    height: 57px;
+}
+
+.tamImagen {
+    width: 100%;
+}
+
+.tamImagenTrabajos{
+    width: 100%;
+}
+
+.iconoRedes{
+    margin: 0.62rem;
+    transition: $transition-3;
+    width: 1.81rem;
+    &:hover{
+        opacity: .5;
+        width: 28px;
+    }
 }
 
 
 
-.tipografiaBold {
-    font-family: Aeonik-Bold, 'Times New Roman', Times, serif;
+/*Detalles visuales*/
+.lineaAbajo{
+    border-bottom: $borderGeneral;
+    display: inline-block;
+    padding-bottom: 1.9rem;
+    margin-bottom: 1.9rem;
+    margin-top: 1.9rem;
+
 }
+
+.espacioTextoMi {
+    margin: .625rem 0 2rem 0;
+}
+
+.linkBlanco{
+    color: $primaryColor;
+    border-bottom: 0rem solid $borderColor;
+}
+
+.estiloTituloTrabajos{
+    text-align: left;
+    margin-top: 1.9rem;
+    margin-bottom: 1.25rem;
+}
+
+.trabajoContenedor {
+    padding: 1.25rem;
+    width: 100%;
+    transition: $transition-3;
+    &:hover{
+    transform: scale(0.95);
+    }
+}
+
+
+
+
+/*Botones detalles*/
+
+.btnMas{
+    text-align: center;
+    border: $borderGeneral;
+    width: 15rem;
+    padding: 2.5rem 0rem;
+    border-radius: 6.25rem;
+    text-transform: uppercase;
+    margin: 2.5rem;
+    transition: $transition-3;
+
+    &:hover {
+        background-color: $btnBgColorHover;
+        color: black;
+        transform: translateY(-5px);
+    }
+}
+
+
+/*Secciones*/
 
 .contenedorTrabajo{
     display: flex;
@@ -344,9 +354,9 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 3.1rem 0rem;
-    border-top: 0.125rem solid white;
-    border-bottom: 0.125rem solid white;
-    transition: .5s;
+    border-top: $borderGeneral;
+    border-bottom: $borderGeneral;
+    transition: $transition-3;
     
 }
 
@@ -415,10 +425,12 @@ footer {
     margin: 2.2rem 0;
 }
 
+/*Formulario*/
+
 legend{
     text-align: left;
-    font-size: 1.9rem;
-    color: white;
+    font-size: $size-2;
+    color: $primaryColor;
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
 }
@@ -433,39 +445,44 @@ fieldset {
 
 label{
     text-align: left;
-    font-size: 1.9rem;
-    color: white;
+    font-size: $size-2;
+    color: $primaryColor;
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4remx;
 }
 
 input {
     text-align: left;
-    font-size: 1.9rem;
-    color: rgba(255, 255, 255, 1);
+    font-size: $size-2;
+    color: $primaryColor;
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
     background-color: rgba(0, 0, 0, 0) ;
     border-color: rgba(0, 0, 0, 0);
     padding-bottom: 1.9rem;
-    border-bottom: 0.125rem solid white;
+    border-bottom: $borderGeneral;
     width: 100%;
+    &:focus-visible {
+        outline: $borderColor auto 1px;
+    }
   
 }
 
 select {
 
     text-align: left;
-    font-size: 1.9rem;
+    font-size: $size-2;
     color: rgba(255, 255, 255, .4);
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
     background-color: rgba(0, 0, 0, 0) ;
     border-color: rgba(0, 0, 0, 0);
     padding-bottom: 1.9rem;
-    border-bottom: 0.125rem solid white;
+    border-bottom: $borderGeneral;
     width: 100%;
-    
+    &:focus-visible {
+        outline: $borderColor auto 1px;
+    }  
 }
 
 .espacioTextoContacto{
@@ -487,7 +504,7 @@ form {
 
 .btnEnviar{
     text-align: center;
-    border: 0.125rem solid white;
+    border: $borderGeneral;
     width: 15rem;
     padding:2.5rem 0;
     border-radius: 6.25rem;
@@ -495,16 +512,16 @@ form {
     margin: 0 0 2.5rem 0;
     width: 12.5rem;
     margin-bottom: 0;
-    transition: .5s;
+    transition: $transition-3;
 }
 
 .btnBorrar {
-    color: #E5CC87;
+    color: $secondaryColor;
     font-family: Aeonik-Light;
-    font-size: 1.5rem;
+    font-size: $size-1;
     text-decoration: none;
     line-height: 1.9rem;
-    border-bottom: solid 0.06rem #E5CC87;
+    border-bottom: solid 0.06rem $borderColorSecondary;
     width: 4.4rem;
     padding-bottom: 0.62rem;
 }
@@ -551,10 +568,6 @@ form {
     padding: 7.5rem 10.625rem;
 }
 
-.seccionMobileTemp{
-    display: none;
-}
-
 /*Animaciones*/
 
 .flotar {
@@ -599,20 +612,15 @@ form {
 }
 
 .itemsMenu{
-    transition: .3s;
+    transition: $transition-1;
+    &:hover {
+        padding-bottom: 0.3125rem;
+        border-bottom: 0.125rem solid $borderColorSecondary;
+        color: $secondaryColor !important; 
+    }
 }
 
-.itemsMenu:hover {
-    padding-bottom: 0.3125rem;
-    border-bottom: 0.125rem solid #E5CC87;
-    color: #E5CC87 !important; 
-}
 
-nav ul li:hover{
-    animation-name: animLink;
-    animation-iteration-count:3;
-    animation-duration: 1s;
-}
 
 @keyframes animLink{
     0% {
@@ -631,21 +639,10 @@ nav ul li:hover{
 }
 
 .animLinksAmarillo {
-    transition: .4s;
-}
-
-.animLinksAmarillo:hover {
-    transform: translateY(-3px);
-}
-
-.trabajoContenedor:hover{
-    transform: scale(0.95);
-}
-
-.btnMas:hover {
-    background-color: white;
-    color: black;
-    transform: translateY(-5px);
+    transition: $transition-2;
+    &:hover {
+        transform: translateY(-3px);
+    }
 }
 
 .noBorderBottom {
@@ -653,17 +650,11 @@ nav ul li:hover{
 }
 
 .contactoAnim {
-    transition: .5s;
-}
-
-.contactoAnim:hover {
-    transform: scale(0.95);
-    color: #E5CC87;
-}
-
-.iconoRedes:hover{
-    opacity: .5;
-    width: 28px;
+    transition: $transition-3;
+    &:hover {
+        transform: scale(0.95);
+        color: $secondaryColor;
+    }
 }
 
 .contenedorTrabajo:hover{
@@ -671,27 +662,19 @@ nav ul li:hover{
 }
 
 .btnEnviar:hover {
-    background-color: white;
+    background-color: $btnBgColorHover;
     color: black;
     transform: translateY(-5px);
 }
 
 a:hover {
-    color: #E5CC87;
+    color: $secondaryColor;
 }
 
 .logoImg:hover{
     animation-name: animLink;
     animation-iteration-count:3;
     animation-duration: 1s;
-}
-
-input:focus-visible {
-    outline: white auto 1px;
-}
-
-select:focus-visible {
-    outline: white auto 1px;
 }
 
 /*Carrusel detalles Bootstrap*/
@@ -731,7 +714,7 @@ select:focus-visible {
 
 @media screen and (max-width: 1301px){
 
-    nav ul {
+    header nav ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -768,7 +751,7 @@ select:focus-visible {
         margin: 2rem;
     }
 
-    .imagenRetrato {
+    .contenedorGrid .imagenRetrato {
         padding: 0 3rem 0 0;
         margin-left: 1rem;
     }
@@ -808,7 +791,8 @@ select:focus-visible {
         align-items: center ;
         padding: 0rem 2.8rem;
     }
-    ol, ul{
+
+    .contenedorGrid .contenedorLinks ol, header nav ul{
         padding-left: 0;
     }
 
@@ -841,7 +825,7 @@ select:focus-visible {
         padding: 3rem 2.8rem;
     }
 
-    .imagenRetrato {
+    .contenedorGrid .imagenRetrato {
         padding: 0 2.8rem 0 2.8rem;
         margin-left: 0rem;
     }
@@ -866,19 +850,19 @@ select:focus-visible {
                              "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos";
     }
 
-    .contenedorPrincipal{
+    .contenedorGrid .contenedorPrincipal{
         background-size: contain;
         flex-flow: column wrap;
         gap: 1.25rem;
         height: 20rem;
     }
 
-    .contenedorHijo {
+    .contenedorGrid .contenedorPrincipal .contenedorHijo {
         text-align: center;
         width: 80%;
     }
 
-    .contenedorEstrella {
+    .contenedorGrid .contenedorPrincipal .contenedorEstrella {
         display: none;
     }
 
@@ -891,7 +875,7 @@ select:focus-visible {
     .contenedorLink{
        margin-right: auto;
     }
-    .contenedorGridTrabajos{
+    .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos{
         grid-template-columns: 1fr;
         grid-template-areas: "trabajoUno"
                              "trabajoDos"

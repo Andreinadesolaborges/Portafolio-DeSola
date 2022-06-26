@@ -1,4 +1,3 @@
-
 //Imports
 
 @import "utilities/variables";
@@ -6,10 +5,61 @@
 
 
 /*reset*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+//Mixins
+
+@mixin grid() {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+@mixin alinearGridSelf {
+    /*horizontal*/
+    justify-self: center;
+    /*vertical*/
+    align-self: center;
+}
+
+@mixin bgStyle {
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+//Extend
+.btn {
+    text-align: center;
+    border: $borderGeneral;
+    width: 12.5rem;
+    padding: 2.5rem;
+    border-radius: 6.25rem;
+    text-transform: uppercase;
+    margin: 2.5rem 0;
+    margin-bottom: 0;
+    transition: $transition-3;
+
+    &:hover {
+        background-color: $btnBgColorHover;
+        color: black;
+        transform: translateY(-5px);
+    }
 }
 
 /* Para el fondo negro*/
@@ -18,17 +68,19 @@ body {
 }
 
 /*Estilos para el menú*/
-header{
+header {
     padding: 3.75rem 6.25rem;
+
     nav {
         ul {
             list-style: none;
-            display: flex;
+            @include flex-row();
             justify-content: space-evenly;
-            align-items: center;
             width: 100%;
-            li{
+
+            li {
                 display: inline-block;
+
                 a {
                     text-decoration: none;
                     color: $primaryColor;
@@ -36,12 +88,12 @@ header{
                     font-size: $size-0;
                     font-family: Aeonik-Bold;
                     margin: 1.25rem;
-                    letter-spacing: 0.1em; 
+                    letter-spacing: 0.1em;
                 }
 
-                &:hover{
+                &:hover {
                     animation-name: animLink;
-                    animation-iteration-count:3;
+                    animation-iteration-count: 3;
                     animation-duration: 1s;
                 }
             }
@@ -68,7 +120,7 @@ h2 {
     text-align: center;
 }
 
-h3{
+h3 {
     color: $primaryColor;
     font-size: $size-3;
     font-family: TAN-Waverly, Arial, Helvetica, sans-serif;
@@ -84,12 +136,16 @@ p {
 }
 
 /*Vínculos*/
-a{
+a {
     color: $secondaryColor;
     font-family: Aeonik-Light;
     font-size: $size-1;
     text-decoration: none;
     line-height: 1.9rem;
+
+    &:hover {
+        color: $secondaryColor;
+    }
 }
 
 span {
@@ -106,64 +162,54 @@ span {
 
 /*Versión index reto grid*/
 .contenedorGrid {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
+    @include grid();
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: "contenedorPrincipal contenedorPrincipal contenedorPrincipal contenedorPrincipal"
-                         "contenedorLinks contenedorLinks contenedorLinks contenedorLinks"
-                         "contenedorSobreMi contenedorSobreMi imagenRetrato imagenRetrato"
-                         "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos";
+        "contenedorLinks contenedorLinks contenedorLinks contenedorLinks"
+        "contenedorSobreMi contenedorSobreMi imagenRetrato imagenRetrato"
+        "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos";
     gap: 1rem;
-    
+
     /*Main*/
 
     .contenedorPrincipal {
-        display: flex;
-        flex-flow: row wrap;
+        @include flex-row();
         background-image: url(../img/bgShape.png);
         background-repeat: no-repeat;
         background-position: center;
         justify-content: center;
-        align-items: center;
         grid-area: contenedorPrincipal;
-        /*horizontal*/
-        justify-self: center;
-        /*vertical*/
-        align-self: center;
+        @include alinearGridSelf();
         height: 34rem;
 
-        .contenedorEstrella{
+        .contenedorEstrella {
             text-align: center;
             display: inline-block;
         }
 
-        .contenedorHijo{
+        .contenedorHijo {
             text-align: center;
             width: 60%;
         }
-        
+
     }
 
-    .contenedorLinks{
+    .contenedorLinks {
         margin-top: 1.9rem;
         margin-bottom: 1.9rem;
         grid-area: contenedorLinks;
-        /*horizontal*/
-        justify-self: center;
-        /*vertical*/
-        align-self: center;
-    
-         ol {
-            display: flex;
+        @include alinearGridSelf();
+
+        ol {
+            @include flex-row();
             margin: 1.25rem;
-            flex-flow: row wrap;
             justify-content: center;
-            align-items: center;
-            li{
+
+            li {
                 list-style: none;
                 margin: 0.6rem;
                 align-self: center;
+
                 a {
                     img {
                         vertical-align: middle;
@@ -171,73 +217,62 @@ span {
                 }
             }
         }
-    }  
-    .contenedorSobreMi{
+    }
+
+    .contenedorSobreMi {
         margin: 1.9rem;
         grid-area: contenedorSobreMi;
-        /*horizontal*/
-        justify-self: center;
-        /*vertical*/
-        align-self: center;
+        @include alinearGridSelf();
         padding: 0 0 0 6.25rem;
-    } 
+    }
+
     .imagenRetrato {
         width: 100%;
         margin-left: 1.9rem;
         grid-area: imagenRetrato;
-         /*horizontal*/
-         justify-self: center;
-         /*vertical*/
-         align-self: center;
-         padding: 0 6.25rem 0 0;
+        /*horizontal*/
+        justify-self: center;
+        /*vertical*/
+        align-self: center;
+        padding: 0 6.25rem 0 0;
     }
-    .contenedorTrabajos{
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        grid-area: contenedorTrabajos; 
 
-        .contenedorGridTrabajos{
+    .contenedorTrabajos {
+        @include flex-column();
+        justify-content: center;
+        grid-area: contenedorTrabajos;
+
+        .contenedorGridTrabajos {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-areas: "trabajoUno trabajoDos"
-                                 "trabajoTres trabajoCuatro";
+                "trabajoTres trabajoCuatro";
             justify-content: center;
             justify-items: center;
-            
+
             /*Contenedores trabajos*/
 
             .trabajoUno {
                 grid-area: trabajoUno;
-                /*horizontal*/
-                justify-self: center;
-                /*vertical*/
-                align-self: center;
+                @include alinearGridSelf();
                 width: 100%;
             }
+
             .trabajoDos {
                 grid-area: trabajoDos;
-                /*horizontal*/
-                justify-self: center;
-                /*vertical*/
-                align-self: center;
+                @include alinearGridSelf();
                 width: 100%;
             }
+
             .trabajoTres {
                 grid-area: trabajoTres;
-                /*horizontal*/
-                justify-self: center;
-                /*vertical*/
-                align-self: center;
+                @include alinearGridSelf();
                 width: 100%;
             }
+
             .trabajoCuatro {
                 grid-area: trabajoCuatro;
-                /*horizontal*/
-                justify-self: center;
-                /*vertical*/
-                align-self: center;
+                @include alinearGridSelf();
                 width: 100%;
             }
         }
@@ -247,16 +282,14 @@ span {
 /*Estilo del footer*/
 
 footer {
-    display: flex;
-    flex-flow: column wrap;
+    @include flex-column();
     justify-content: center;
-    align-items: center;
     padding: 3.75rem;
     background-image: url(../img/bgFooter.png);
     background-position: top;
     background-repeat: no-repeat;
 
-    .elementoFooter{
+    .elementoFooter {
         margin: 1.25rem;
     }
 
@@ -268,21 +301,28 @@ footer {
     transition: $transition-1;
     width: 57px;
     height: 57px;
+
+    &:hover {
+        animation-name: animLink;
+        animation-iteration-count: 3;
+        animation-duration: 1s;
+    }
 }
 
 .tamImagen {
     width: 100%;
 }
 
-.tamImagenTrabajos{
+.tamImagenTrabajos {
     width: 100%;
 }
 
-.iconoRedes{
+.iconoRedes {
     margin: 0.62rem;
     transition: $transition-3;
     width: 1.81rem;
-    &:hover{
+
+    &:hover {
         opacity: .5;
         width: 28px;
     }
@@ -291,7 +331,7 @@ footer {
 
 
 /*Detalles visuales*/
-.lineaAbajo{
+.lineaAbajo {
     border-bottom: $borderGeneral;
     display: inline-block;
     padding-bottom: 1.9rem;
@@ -304,12 +344,12 @@ footer {
     margin: .625rem 0 2rem 0;
 }
 
-.linkBlanco{
+.linkBlanco {
     color: $primaryColor;
     border-bottom: 0rem solid $borderColor;
 }
 
-.estiloTituloTrabajos{
+.estiloTituloTrabajos {
     text-align: left;
     margin-top: 1.9rem;
     margin-bottom: 1.25rem;
@@ -319,96 +359,104 @@ footer {
     padding: 1.25rem;
     width: 100%;
     transition: $transition-3;
-    &:hover{
-    transform: scale(0.95);
+
+    &:hover {
+        transform: scale(0.95);
     }
 }
 
+.tamImagenTrabajo {
+    width: 18.75rem;
+}
 
 
 
 /*Botones detalles*/
 
-.btnMas{
-    text-align: center;
-    border: $borderGeneral;
-    width: 15rem;
-    padding: 2.5rem 0rem;
-    border-radius: 6.25rem;
-    text-transform: uppercase;
-    margin: 2.5rem;
-    transition: $transition-3;
-
-    &:hover {
-        background-color: $btnBgColorHover;
-        color: black;
-        transform: translateY(-5px);
-    }
+.btnMas {
+    @extend .btn;
 }
+
+
+.btnEnviar {
+    @extend .btn;
+}
+
+.btnBorrar {
+    color: $secondaryColor;
+    font-family: Aeonik-Light;
+    font-size: $size-1;
+    text-decoration: none;
+    line-height: 1.9rem;
+    border-bottom: solid 0.06rem $borderColorSecondary;
+    width: 4.4rem;
+    padding-bottom: 0.62rem;
+}
+
+.contenedorBotones {
+    @include flex-row();
+    justify-content: space-between;
+    width: 100%;
+}
+
 
 
 /*Secciones*/
 
-.contenedorTrabajo{
-    display: flex;
-    flex-flow: row wrap;
+.contenedorTrabajo {
+    @include flex-row();
     justify-content: center;
-    align-items: center;
     padding: 3.1rem 0rem;
     border-top: $borderGeneral;
     border-bottom: $borderGeneral;
     transition: $transition-3;
-    
+    &:hover{
+        transform: scale(0.95);
+    }
 }
 
-.espacioTitulo{
+.espacioTitulo {
     margin: 4.4rem 0rem;
 }
 
-.espacioTitulo2{
+.espacioTitulo2 {
     margin: 0 0 1.9rem 0;
 }
 
-.espacioTextoTrabajo{
+.espacioTextoTrabajo {
     margin-bottom: 1.25rem;
 }
 
-.noMarginTop{
+.noMarginTop {
     border-top: none;
 }
 
-.fondoDiseño{
+.fondoDiseño {
     background-image: url(../img/bg-design.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    @include bgStyle();
 }
 
-.fondoDesarrollo{
+.fondoDesarrollo {
     background-image: url(../img/bg-desarrollo.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    @include bgStyle();
 }
 
-.fondoUnity{
+.fondoUnity {
     background-image: url(../img/bg-unity.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    @include bgStyle();
 }
 
-.fondoContacto{
+.fondoContacto {
     background-image: url(../img/bg-contact.png);
-    background-position: top right;
-    background-repeat: no-repeat;
+    @include bgStyle();
 }
 
-.containerDiseño{
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center ;
+.containerDiseño {
+    @include flex-column();
     padding: 0rem 4.625rem;
 }
 
-.contenedorTextos{
+.contenedorTextos {
     padding: 3.125rem;
     width: 25rem;
 }
@@ -417,18 +465,18 @@ footer {
     text-align: left;
 }
 
-.contenedorSeccion{
+.contenedorSeccion {
     width: 40%;
     margin: 7.5rem 10.625rem;
 }
 
-.contenedorEstrella2{
+.contenedorEstrella2 {
     margin: 2.2rem 0;
 }
 
 /*Formulario*/
 
-legend{
+legend {
     text-align: left;
     font-size: $size-2;
     color: $primaryColor;
@@ -438,13 +486,11 @@ legend{
 
 fieldset {
     border: none;
-    display: flex;
-    flex-flow: column wrap;
+    @include flex-column();
     justify-content: flex-start;
-    align-items: flex-start;
 }
 
-label{
+label {
     text-align: left;
     font-size: $size-2;
     color: $primaryColor;
@@ -458,15 +504,16 @@ input {
     color: $primaryColor;
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
-    background-color: rgba(0, 0, 0, 0) ;
+    background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
     padding-bottom: 1.9rem;
     border-bottom: $borderGeneral;
     width: 100%;
+
     &:focus-visible {
         outline: $borderColor auto 1px;
     }
-  
+
 }
 
 select {
@@ -476,17 +523,18 @@ select {
     color: rgba(255, 255, 255, .4);
     font-family: Aeonik-Light, 'Times New Roman', Times, serif;
     line-height: 2.4rem;
-    background-color: rgba(0, 0, 0, 0) ;
+    background-color: rgba(0, 0, 0, 0);
     border-color: rgba(0, 0, 0, 0);
     padding-bottom: 1.9rem;
     border-bottom: $borderGeneral;
     width: 100%;
+
     &:focus-visible {
         outline: $borderColor auto 1px;
-    }  
+    }
 }
 
-.espacioTextoContacto{
+.espacioTextoContacto {
     margin: 2.5rem 0;
 }
 
@@ -503,51 +551,14 @@ form {
     height: 1.25rem;
 }
 
-.btnEnviar{
-    text-align: center;
-    border: $borderGeneral;
-    width: 15rem;
-    padding:2.5rem 0;
-    border-radius: 6.25rem;
-    text-transform: uppercase;
-    margin: 0 0 2.5rem 0;
-    width: 12.5rem;
-    margin-bottom: 0;
-    transition: $transition-3;
-}
-
-.btnBorrar {
-    color: $secondaryColor;
-    font-family: Aeonik-Light;
-    font-size: $size-1;
-    text-decoration: none;
-    line-height: 1.9rem;
-    border-bottom: solid 0.06rem $borderColorSecondary;
-    width: 4.4rem;
-    padding-bottom: 0.62rem;
-}
-
-.contenedorBotones {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-.tamImagenTrabajo{
-    width: 18.75rem;
-}
-
 /*Versión de grid sección Unity para el reto semanal*/
 
-.gridSeccionUnity{
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+.gridSeccionUnity {
+    @include grid();
+    grid-template-columns: 0.2fr 0.2fr 0.1fr 1fr 1fr;
     grid-template-areas: "contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity imagenAlien"
-                         "contenedorUnity contenedorUnity contenedorUnity contenedorUnity contenedorUnity";
-    gap: 1rem;      
+        "contenedorUnity contenedorUnity contenedorUnity contenedorUnity contenedorUnity";
+    gap: 1rem;
 }
 
 .imagenAlien {
@@ -555,16 +566,14 @@ form {
     padding: 7.5rem 10.625rem;
 }
 
-.contenedorUnity{
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
+.contenedorUnity {
+    @include flex-column();
     grid-area: contenedorUnity;
     width: 100%;
     padding: 0rem 4.625rem;
 }
 
-.contenedorSeccionUnity{
+.contenedorSeccionUnity {
     grid-area: contenedorSeccionUnity;
     padding: 7.5rem 10.625rem;
 }
@@ -582,10 +591,12 @@ form {
         transform: translateY(0);
         transform: scale(1);
     }
+
     50% {
         transform: translateY(-5px);
         transform: scale(0.7);
     }
+
     100% {
         transform: translateY(0);
         transform: scale(1);
@@ -601,38 +612,43 @@ form {
 @keyframes flotar2 {
     0% {
         transform: translateY(0);
-        
+
     }
+
     50% {
         transform: translateY(-5px);
-        
+
     }
+
     100% {
         transform: translateY(0);
     }
 }
 
-.itemsMenu{
+.itemsMenu {
     transition: $transition-1;
+
     &:hover {
         padding-bottom: 0.3125rem;
         border-bottom: 0.125rem solid $borderColorSecondary;
-        color: $secondaryColor !important; 
+        color: $secondaryColor !important;
     }
 }
 
 
 
-@keyframes animLink{
+@keyframes animLink {
     0% {
         transform: translateY(0);
         transform: scale(1);
-        
+
     }
+
     50% {
         transform: translateY(-2px);
         transform: scale(1.05);
     }
+
     100% {
         transform: translateY(0);
         transform: scale(1);
@@ -641,6 +657,7 @@ form {
 
 .animLinksAmarillo {
     transition: $transition-2;
+
     &:hover {
         transform: translateY(-3px);
     }
@@ -652,35 +669,16 @@ form {
 
 .contactoAnim {
     transition: $transition-3;
+
     &:hover {
         transform: scale(0.95);
         color: $secondaryColor;
     }
 }
 
-.contenedorTrabajo:hover{
-    transform: scale(0.95);
-}
-
-.btnEnviar:hover {
-    background-color: $btnBgColorHover;
-    color: black;
-    transform: translateY(-5px);
-}
-
-a:hover {
-    color: $secondaryColor;
-}
-
-.logoImg:hover{
-    animation-name: animLink;
-    animation-iteration-count:3;
-    animation-duration: 1s;
-}
-
 /*Carrusel detalles Bootstrap*/
 
-.carousel-control-prev{
+.carousel-control-prev {
     background-color: black;
     top: 40%;
     height: 100px;
@@ -689,7 +687,7 @@ a:hover {
     opacity: .3;
 }
 
-.carousel-control-prev:active{
+.carousel-control-prev:active {
     opacity: .5;
 }
 
@@ -702,7 +700,7 @@ a:hover {
     opacity: .3;
 }
 
-.carousel-control-next:active{
+.carousel-control-next:active {
     opacity: .5;
 }
 
@@ -713,18 +711,18 @@ a:hover {
 
 /*Versiones de pantalla*/
 
-@media screen and (max-width: 1301px){
+@media screen and (max-width: 1301px) {
 
     header nav ul {
-        display: flex;
+        @include flex-row();
         justify-content: space-between;
-        align-items: center;
+
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
 
-    a{
+    a {
         font-size: 1.2rem;
         line-height: 1.6rem;
     }
@@ -738,7 +736,7 @@ a:hover {
         font-size: 1.6rem;
     }
 
-    h3{
+    h3 {
         font-size: 1.7rem;
     }
 
@@ -747,7 +745,7 @@ a:hover {
         line-height: 1.6rem;
     }
 
-    .btnMas{
+    .btnMas {
         width: 12rem;
         padding: 2rem 0rem;
         margin: 2rem;
@@ -762,7 +760,7 @@ a:hover {
         padding: 3.75rem 3rem;
     }
 
-    .contenedorGrid .contenedorSobreMi{
+    .contenedorGrid .contenedorSobreMi {
         padding: 0 0 0 3rem;
         margin: 1rem;
     }
@@ -770,8 +768,8 @@ a:hover {
     .imagenAlien {
         padding: 5.5rem 4.625rem;
     }
-    
-    .contenedorSeccionUnity{
+
+    .contenedorSeccionUnity {
         padding: 5.5rem 4.625rem;
     }
 
@@ -779,7 +777,7 @@ a:hover {
         width: 3.7rem;
     }
 
-    .contenedorSeccion{
+    .contenedorSeccion {
         margin: 5.5rem 4.625rem;
     }
 
@@ -787,21 +785,21 @@ a:hover {
         padding: 3.125rem;
     }
 
-    .containerDiseño{
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center ;
+    .containerDiseño {
+        @include flex-column();
         padding: 0rem 2.8rem;
     }
 
-    .contenedorGrid .contenedorLinks ol, header nav ul{
+    .contenedorGrid .contenedorLinks ol,
+    header nav ul {
         padding-left: 0;
     }
 
 }
-@media screen and (max-width: 768px){
-    
-    a{
+
+@media screen and (max-width: 768px) {
+
+    a {
         font-size: 1rem;
         line-height: 1.3rem;
     }
@@ -815,7 +813,7 @@ a:hover {
         font-size: 1.25rem;
     }
 
-    h3{
+    h3 {
         font-size: 1rem;
     }
 
@@ -833,12 +831,12 @@ a:hover {
         margin-left: 0rem;
     }
 
-    .contenedorGrid .contenedorSobreMi{
+    .contenedorGrid .contenedorSobreMi {
         padding: 0 2.8rem 0 2.8rem;
         margin: 0rem;
     }
 
-    .btnMas{
+    .btnMas {
         width: 10rem;
         padding: 1.5rem 0rem;
         margin: 1.5rem;
@@ -847,13 +845,13 @@ a:hover {
     .contenedorGrid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: "contenedorPrincipal contenedorPrincipal contenedorPrincipal contenedorPrincipal"
-                             "contenedorLinks contenedorLinks contenedorLinks contenedorLinks"
-                             "imagenRetrato imagenRetrato imagenRetrato imagenRetrato"
-                             "contenedorSobreMi contenedorSobreMi contenedorSobreMi contenedorSobreMi"
-                             "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos";
+            "contenedorLinks contenedorLinks contenedorLinks contenedorLinks"
+            "imagenRetrato imagenRetrato imagenRetrato imagenRetrato"
+            "contenedorSobreMi contenedorSobreMi contenedorSobreMi contenedorSobreMi"
+            "contenedorTrabajos contenedorTrabajos contenedorTrabajos contenedorTrabajos";
     }
 
-    .contenedorGrid .contenedorPrincipal{
+    .contenedorGrid .contenedorPrincipal {
         background-size: contain;
         flex-flow: column wrap;
         gap: 1.25rem;
@@ -870,21 +868,20 @@ a:hover {
     }
 
     .contenidoSobreMi {
-            display: flex;
-            flex-flow: column wrap;
-            align-items: center;
+        @include flex-column();
     }
-    
-    .contenedorLink{
-       margin-right: auto;
+
+    .contenedorLink {
+        margin-right: auto;
     }
-    .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos{
+
+    .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos {
         grid-template-columns: 1fr;
         grid-template-areas: "trabajoUno"
-                             "trabajoDos"
-                             "trabajoTres"
-                             "trabajoCuatro"; 
-                             
+            "trabajoDos"
+            "trabajoTres"
+            "trabajoCuatro";
+
         padding: 0 2.8rem 0 2.8rem;
     }
 
@@ -904,43 +901,49 @@ a:hover {
     .tamAlien {
         width: 2.2rem;
     }
-    
-    .contenedorSeccionUnity{
+
+    .contenedorSeccionUnity {
         padding: 2.8rem 2.8rem;
     }
 
-    .gridSeccionUnity{
+    .gridSeccionUnity {
         display: grid;
         justify-content: center;
         justify-items: center;
         grid-template-columns: 1fr;
         grid-template-areas: "imagenAlien"
-                             "contenedorSeccionUnity"
-                             "contenedorUnity";
-        gap: 1rem;      
+            "contenedorSeccionUnity"
+            "contenedorUnity";
+        gap: 1rem;
     }
 
     .espacioTitulo {
         margin: 2.4rem 0rem;
     }
 
-    .contenedorTrabajo{
+    .contenedorTrabajo {
         flex-flow: column wrap;
         padding: 2.2rem 2.2rem;
         width: 100%;
-        
+
+        .contenedorTrabajo:hover {
+            transform: scale(0.95);
+        }
+
     }
-    .tamImagenTrabajo{
+
+    .tamImagenTrabajo {
         width: 100%;
-        
+
     }
-    .contenedorTextos{
+
+    .contenedorTextos {
         margin-right: auto;
         padding: 1.2rem 0 1.2rem 0;
         width: 100%;
     }
 
-    .tamOjo{
+    .tamOjo {
         width: 1.2rem;
     }
 
@@ -948,16 +951,16 @@ a:hover {
         margin: 0;
     }
 
-    .contenedorUnity{
+    .contenedorUnity {
         padding: 0rem 2.8rem;
     }
 
-    .contenedorSeccion{
+    .contenedorSeccion {
         margin: 2.8rem 2.8rem;
         width: 80%;
     }
 
-    input{
+    input {
         font-size: 1.5rem;
     }
 
@@ -968,23 +971,25 @@ a:hover {
     select {
         font-size: 1.5rem;
     }
+
     label {
         font-size: 1.5rem;
     }
 
-    .carousel-control-next{
+    .carousel-control-next {
         width: 50px;
         height: 50px;
     }
 
-    .carousel-control-prev{
+    .carousel-control-prev {
         width: 50px;
         height: 50px;
     }
 
 }
-@media screen and (max-width: 480px){
-   
+
+@media screen and (max-width: 480px) {
+
     header {
         padding: 2.2rem 2rem;
     }
@@ -998,7 +1003,7 @@ a:hover {
         height: 16rem;
     }
 
-    .contenedorLinks{
+    .contenedorLinks {
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -1007,12 +1012,12 @@ a:hover {
         padding: 2rem;
     }
 
-    .btnEnviar{
+    .btnEnviar {
         width: 8.5rem;
         padding: 1.5rem 0;
     }
 
-    .tamOjo{
+    .tamOjo {
         width: .8rem;
     }
 
@@ -1020,6 +1025,7 @@ a:hover {
         font-size: 1.1rem;
         line-height: 1.4rem;
     }
+
     h2 {
         font-size: 0.85rem;
     }
@@ -1028,7 +1034,8 @@ a:hover {
         font-size: 0.8rem;
     }
 
-    h3{
+
+    h3 {
         font-size: 0.75rem;
     }
 
@@ -1054,5 +1061,9 @@ a:hover {
         padding: 1.3rem 0rem;
         margin: 1.3rem;
     }
-    
+
+    .btnEnviar {
+        margin: 0;
+    }
+
 }

@@ -18,6 +18,21 @@
   padding: 0;
   box-sizing: border-box; }
 
+.btn, .btnMas, .btnEnviar {
+  text-align: center;
+  border: 0.125rem solid white;
+  width: 12.5rem;
+  padding: 2.5rem;
+  border-radius: 6.25rem;
+  text-transform: uppercase;
+  margin: 2.5rem 0;
+  margin-bottom: 0;
+  transition: 0.5s; }
+  .btn:hover, .btnMas:hover, .btnEnviar:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-5px); }
+
 /* Para el fondo negro*/
 body {
   background-color: black; }
@@ -28,8 +43,9 @@ header {
   header nav ul {
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: row wrap;
     align-items: center;
+    justify-content: space-evenly;
     width: 100%; }
     header nav ul li {
       display: inline-block; }
@@ -81,6 +97,8 @@ a {
   font-size: 1.5rem;
   text-decoration: none;
   line-height: 1.9rem; }
+  a:hover {
+    color: #E5CC87; }
 
 span {
   vertical-align: middle;
@@ -103,11 +121,11 @@ span {
   .contenedorGrid .contenedorPrincipal {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     background-image: url(../img/bgShape.png);
     background-repeat: no-repeat;
     background-position: center;
     justify-content: center;
-    align-items: center;
     grid-area: contenedorPrincipal;
     /*horizontal*/
     justify-self: center;
@@ -130,10 +148,10 @@ span {
     align-self: center; }
     .contenedorGrid .contenedorLinks ol {
       display: flex;
-      margin: 1.25rem;
       flex-flow: row wrap;
-      justify-content: center;
-      align-items: center; }
+      align-items: center;
+      margin: 1.25rem;
+      justify-content: center; }
       .contenedorGrid .contenedorLinks ol li {
         list-style: none;
         margin: 0.6rem;
@@ -160,8 +178,8 @@ span {
   .contenedorGrid .contenedorTrabajos {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     grid-area: contenedorTrabajos; }
     .contenedorGrid .contenedorTrabajos .contenedorGridTrabajos {
       display: grid;
@@ -203,8 +221,8 @@ span {
 footer {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 3.75rem;
   background-image: url(../img/bgFooter.png);
   background-position: top;
@@ -217,6 +235,10 @@ footer {
   transition: 0.3s;
   width: 57px;
   height: 57px; }
+  .logoImg:hover {
+    animation-name: animLink;
+    animation-iteration-count: 3;
+    animation-duration: 1s; }
 
 .tamImagen {
   width: 100%; }
@@ -259,31 +281,39 @@ footer {
   .trabajoContenedor:hover {
     transform: scale(0.95); }
 
+.tamImagenTrabajo {
+  width: 18.75rem; }
+
 /*Botones detalles*/
-.btnMas {
-  text-align: center;
-  border: 0.125rem solid white;
-  width: 15rem;
-  padding: 2.5rem 0rem;
-  border-radius: 6.25rem;
-  text-transform: uppercase;
-  margin: 2.5rem;
-  transition: 0.5s; }
-  .btnMas:hover {
-    background-color: white;
-    color: black;
-    transform: translateY(-5px); }
+.btnBorrar {
+  color: #E5CC87;
+  font-family: Aeonik-Light;
+  font-size: 1.5rem;
+  text-decoration: none;
+  line-height: 1.9rem;
+  border-bottom: solid 0.06rem #E5CC87;
+  width: 4.4rem;
+  padding-bottom: 0.62rem; }
+
+.contenedorBotones {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; }
 
 /*Secciones*/
 .contenedorTrabajo {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding: 3.1rem 0rem;
   border-top: 0.125rem solid white;
   border-bottom: 0.125rem solid white;
   transition: 0.5s; }
+  .contenedorTrabajo:hover {
+    transform: scale(0.95); }
 
 .espacioTitulo {
   margin: 4.4rem 0rem; }
@@ -349,8 +379,8 @@ fieldset {
   border: none;
   display: flex;
   flex-flow: column wrap;
-  justify-content: flex-start;
-  align-items: flex-start; }
+  align-items: center;
+  justify-content: flex-start; }
 
 label {
   text-align: left;
@@ -400,44 +430,12 @@ form {
   width: 1.25rem;
   height: 1.25rem; }
 
-.btnEnviar {
-  text-align: center;
-  border: 0.125rem solid white;
-  width: 15rem;
-  padding: 2.5rem 0;
-  border-radius: 6.25rem;
-  text-transform: uppercase;
-  margin: 0 0 2.5rem 0;
-  width: 12.5rem;
-  margin-bottom: 0;
-  transition: 0.5s; }
-
-.btnBorrar {
-  color: #E5CC87;
-  font-family: Aeonik-Light;
-  font-size: 1.5rem;
-  text-decoration: none;
-  line-height: 1.9rem;
-  border-bottom: solid 0.06rem #E5CC87;
-  width: 4.4rem;
-  padding-bottom: 0.62rem; }
-
-.contenedorBotones {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%; }
-
-.tamImagenTrabajo {
-  width: 18.75rem; }
-
 /*Versión de grid sección Unity para el reto semanal*/
 .gridSeccionUnity {
   display: grid;
   justify-content: center;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.2fr 0.2fr 0.1fr 1fr 1fr;
   grid-template-areas: "contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity imagenAlien" "contenedorUnity contenedorUnity contenedorUnity contenedorUnity contenedorUnity";
   gap: 1rem; }
 
@@ -519,22 +517,6 @@ form {
     transform: scale(0.95);
     color: #E5CC87; }
 
-.contenedorTrabajo:hover {
-  transform: scale(0.95); }
-
-.btnEnviar:hover {
-  background-color: white;
-  color: black;
-  transform: translateY(-5px); }
-
-a:hover {
-  color: #E5CC87; }
-
-.logoImg:hover {
-  animation-name: animLink;
-  animation-iteration-count: 3;
-  animation-duration: 1s; }
-
 /*Carrusel detalles Bootstrap*/
 .carousel-control-prev {
   background-color: black;
@@ -565,8 +547,9 @@ a:hover {
 @media screen and (max-width: 1301px) {
   header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center; } }
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between; } }
 
 @media screen and (max-width: 1024px) {
   a {
@@ -609,7 +592,8 @@ a:hover {
     flex-flow: column wrap;
     align-items: center;
     padding: 0rem 2.8rem; }
-  .contenedorGrid .contenedorLinks ol, header nav ul {
+  .contenedorGrid .contenedorLinks ol,
+  header nav ul {
     padding-left: 0; } }
 
 @media screen and (max-width: 768px) {
@@ -685,6 +669,8 @@ a:hover {
     flex-flow: column wrap;
     padding: 2.2rem 2.2rem;
     width: 100%; }
+    .contenedorTrabajo .contenedorTrabajo:hover {
+      transform: scale(0.95); }
   .tamImagenTrabajo {
     width: 100%; }
   .contenedorTextos {
@@ -754,4 +740,6 @@ a:hover {
   .btnMas {
     width: 8rem;
     padding: 1.3rem 0rem;
-    margin: 1.3rem; } }
+    margin: 1.3rem; }
+  .btnEnviar {
+    margin: 0; } }

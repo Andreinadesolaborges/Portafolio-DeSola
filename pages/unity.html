@@ -1,129 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!--Link del css-->
     <link rel="stylesheet" href="../css/main.css">
     <title>Portafolio - Desarrollo en Unity</title>
 </head>
+
 <body>
-     <!--Acá comienza el header del sitio con logo y links-->
+    <!--Acá comienza el header del sitio con logo y links-->
     <!--Bootstrap Navbar-->
     <header>
         <nav class="navbar navbar-expand-lg d-flex justify-content-between">
             <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">
-                <img class="logoImg" src="../img/Logo.svg" alt="Logo">   
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="../img/iPhone13/menu.svg" alt="icono del menu">
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link text-white itemsMenu" href="design.html">Diseño Gráfico</a>
-                  </li>
-                  <li class="nav-item text-white">
-                    <a class="nav-link text-white itemsMenu" href="development.html">Desarrollo Web</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white itemsMenu" href="unity.html">Unity y videojuegos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white itemsMenu" href="contact.html">Contáctame</a>
-                  </li>
-                </ul>
-              </div>
+                <a class="navbar-brand" href="../index.html">
+                    <img class="logoImg" src="../img/Logo.svg" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="../img/iPhone13/menu.svg" alt="icono del menu">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white itemsMenu" href="design.html">Diseño Gráfico</a>
+                        </li>
+                        <li class="nav-item text-white">
+                            <a class="nav-link text-white itemsMenu" href="development.html">Desarrollo Web</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white itemsMenu" href="unity.html">Unity y videojuegos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white itemsMenu" href="contact.html">Contáctame</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div class="fondoUnity"> 
 
-         <!--Trabajos de desarrollo web y forntend-->
 
-         <!--Texto descriptivo de la sección-->
-         <main  class="gridSeccionUnity">
-            <div class="contenedorSeccionUnity"> 
-                <h1 class="alinearTextoIzq espacioTitulo2">Unity y videojuegos</h1>
-                <h2 class="alinearTextoIzq">Los videojuegos siempre me han acompañado desde niña, y siendo uno de mis hobbies preferidos, he estado estudiando y planificando mis propias ideas, tuve la oportunidad de aprender en los trayectos de Image Campus programación para videojuegos y Unity. Realicé dos demos como entregas que se pueden jugar en el navegador. En estos proyectos me involucre más del lado de código y conceptualización y no tanto en el lado artístico, utilizando assets de libre uso.</h2>
-                <div class="contenedorEstrella2 flotar2">
-                    <img src="../img/Star.png" alt="Icono estrella">
+    <!--Trabajos de desarrollo web y forntend-->
+
+    <!--Texto descriptivo de la sección-->
+    <main class="gridSeccionUnity fondoUnity">
+        <div class="contenedorSeccionUnity">
+            <h1 class="alinearTextoIzq espacioTitulo2">Unity y videojuegos</h1>
+            <h2 class="alinearTextoIzq">Los videojuegos siempre me han acompañado desde niña, y siendo uno de mis
+                hobbies preferidos, he estado estudiando y planificando mis propias ideas, tuve la oportunidad de
+                aprender en los trayectos de Image Campus programación para videojuegos y Unity. Realicé dos demos como
+                entregas que se pueden jugar en el navegador. En estos proyectos me involucre más del lado de código y
+                conceptualización y no tanto en el lado artístico, utilizando assets de libre uso.</h2>
+            <div class="contenedorEstrella2 flotar2">
+                <img src="../img/Star.png" alt="Icono estrella">
+            </div>
+        </div>
+        <div class="imagenAlien flotar">
+            <img src="../img/space-inv.svg" alt="icono de space invader" class="tamAlien">
+        </div>
+
+        <!--Listado de trabajos de la sección-->
+
+        <section class="contenedorUnity">
+            <h3 class="lineaAbajo espacioTitulo">Trabajos en Unity</h3>
+            <div class="contenedorTrabajo noBorderTop">
+                <div class="contenedorImagen">
+                    <img class="tamImagenTrabajo" src="../img/proyectos/unitydemo2d.png" alt="imagen del proyecto">
+                </div>
+                <div class="contenedorTextos">
+                    <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">Ghostcape Game</h2>
+                    <h2 class="alinearTextoIzq">Demo 2D</h2>
+                </div>
+                <div class="contenedorLink animLinksAmarillo">
+                    <a href="https://ninadesola.itch.io/demo-1" target="_blank">
+                        <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
+                        <span>Ver más detalles</span>
+                    </a>
                 </div>
             </div>
-            <div class="imagenAlien flotar">
-                <img src="../img/space-inv.svg" alt="icono de space invader" class="tamAlien">
+            <div class="contenedorTrabajo noMarginTop">
+                <div class="contenedorImagen">
+                    <img class="tamImagenTrabajo" src="../img/proyectos/unitydemo3d.png" alt="imagen del proyecto">
+                </div>
+                <div class="contenedorTextos">
+                    <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">3D Platformer</h2>
+                    <h2 class="alinearTextoIzq">Demo 3D</h2>
+                </div>
+                <div class="contenedorLink animLinksAmarillo">
+                    <a href="https://ninadesola.itch.io/demo-2-3d-game" target="_blank">
+                        <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
+                        <span>Ver más detalles</span>
+                    </a>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <!--Listado de trabajos de la sección-->
-
-            <section class="contenedorUnity">
-                <h3 class="lineaAbajo espacioTitulo">Trabajos en Unity</h3>
-                <div class="contenedorTrabajo noBorderTop">
-                    <div class="contenedorImagen">
-                        <img class="tamImagenTrabajo" src="../img/proyectos/unitydemo2d.png" alt="imagen del proyecto">
-                    </div>
-                    <div class="contenedorTextos">
-                        <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">Ghostcape Game</h2>
-                        <h2 class="alinearTextoIzq">Demo 2D</h2>
-                    </div>
-                    <div class="contenedorLink animLinksAmarillo">
-                        <a href="https://ninadesola.itch.io/demo-1" target="_blank">
-                            <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
-                            <span>Ver más detalles</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="contenedorTrabajo noMarginTop">
-                    <div class="contenedorImagen">
-                        <img class="tamImagenTrabajo" src="../img/proyectos/unitydemo3d.png" alt="imagen del proyecto">
-                    </div>
-                    <div class="contenedorTextos">
-                        <h2 class="tipografiaBold alinearTextoIzq espacioTextoTrabajo">3D Platformer</h2>
-                        <h2 class="alinearTextoIzq">Demo 3D</h2>
-                    </div>
-                    <div class="contenedorLink animLinksAmarillo">
-                        <a href="https://ninadesola.itch.io/demo-2-3d-game" target="_blank">
-                            <img class="tamOjo" src="../img/eye.png" alt="Icono ver">
-                            <span>Ver más detalles</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-
-     <!--Footer de la web con contacto y redes sociales-->
+    <!--Footer de la web con contacto y redes sociales-->
 
     <footer>
         <div class="elementoFooter">
-             <!--Link a página de contacto-->
+            <!--Link a página de contacto-->
             <a href="contact.html">
                 <h3 class="contactoAnim">Contáctame</h3>
             </a>
         </div>
         <div class="elementoFooter">
             <!--Redes Sociales-->
-         <a href="mailto:andreinadesola@gmail.com">
-            <img class="iconoRedes" src="../img/mail.png" alt="Icono email">
-         </a>
-         <a href="https://www.instagram.com/andreinadesola" target="_blank">
-            <img class="iconoRedes" src="../img/ig.png" alt="Icono Instagram">
-        </a>
-        <a href="https://www.linkedin.com/in/andreina-de-sola/" target="_blank">
-             <img class="iconoRedes" src="../img/linkedin.png" alt="Icono Linkedin">
-        </a>
+            <a href="mailto:andreinadesola@gmail.com">
+                <img class="iconoRedes" src="../img/mail.png" alt="Icono email">
+            </a>
+            <a href="https://www.instagram.com/andreinadesola" target="_blank">
+                <img class="iconoRedes" src="../img/ig.png" alt="Icono Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/andreina-de-sola/" target="_blank">
+                <img class="iconoRedes" src="../img/linkedin.png" alt="Icono Linkedin">
+            </a>
         </div>
         <div class="elementoFooter">
             <!--Derechos reservados-->
-        <p>© ANDREINA DE SOLA - 2022</p>
-        </div>  
+            <p>© ANDREINA DE SOLA - 2022</p>
+        </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -20,6 +20,6 @@
   "homepage": "https://github.com/Andreinadesolaborges/Portafolio-DeSola#readme",
   "devDependencies": {
     "node-sass": "^7.0.1",
-    "nodemon": "^1.3.3"
+    "nodemon": "^2.0.18"
   }
 }

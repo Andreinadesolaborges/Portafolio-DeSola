@@ -284,6 +284,12 @@ footer {
 .tamImagenTrabajo {
   width: 18.75rem; }
 
+.noBorderTop {
+  border-top: none; }
+
+.noBorderBottom {
+  border-bottom: none; }
+
 /*Botones detalles*/
 .btnBorrar {
   color: #E5CC87;
@@ -303,6 +309,12 @@ footer {
   width: 100%; }
 
 /*Secciones*/
+.containerDiseño {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 0rem 4.625rem; }
+
 .contenedorTrabajo {
   display: flex;
   flex-flow: row wrap;
@@ -314,6 +326,9 @@ footer {
   transition: 0.5s; }
   .contenedorTrabajo:hover {
     transform: scale(0.95); }
+  .contenedorTrabajo .contenedorTextos {
+    padding: 3.125rem;
+    width: 25rem; }
 
 .espacioTitulo {
   margin: 4.4rem 0rem; }
@@ -347,16 +362,6 @@ footer {
   background-position: top right;
   background-repeat: no-repeat; }
 
-.containerDiseño {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  padding: 0rem 4.625rem; }
-
-.contenedorTextos {
-  padding: 3.125rem;
-  width: 25rem; }
-
 .alinearTextoIzq {
   text-align: left; }
 
@@ -374,13 +379,6 @@ legend {
   color: white;
   font-family: Aeonik-Light, 'Times New Roman', Times, serif;
   line-height: 2.4rem; }
-
-fieldset {
-  border: none;
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: flex-start; }
 
 label {
   text-align: left;
@@ -438,22 +436,19 @@ form {
   grid-template-columns: 0.2fr 0.2fr 0.1fr 1fr 1fr;
   grid-template-areas: "contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity contenedorSeccionUnity imagenAlien" "contenedorUnity contenedorUnity contenedorUnity contenedorUnity contenedorUnity";
   gap: 1rem; }
-
-.imagenAlien {
-  grid-area: imagenAlien;
-  padding: 7.5rem 10.625rem; }
-
-.contenedorUnity {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  grid-area: contenedorUnity;
-  width: 100%;
-  padding: 0rem 4.625rem; }
-
-.contenedorSeccionUnity {
-  grid-area: contenedorSeccionUnity;
-  padding: 7.5rem 10.625rem; }
+  .gridSeccionUnity .contenedorSeccionUnity {
+    grid-area: contenedorSeccionUnity;
+    padding: 7.5rem 10.625rem; }
+  .gridSeccionUnity .imagenAlien {
+    grid-area: imagenAlien;
+    padding: 7.5rem 10.625rem; }
+  .gridSeccionUnity .contenedorUnity {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    grid-area: contenedorUnity;
+    width: 100%;
+    padding: 0rem 4.625rem; }
 
 /*Animaciones*/
 .flotar {
@@ -508,9 +503,6 @@ form {
   .animLinksAmarillo:hover {
     transform: translateY(-3px); }
 
-.noBorderBottom {
-  border-bottom: none; }
-
 .contactoAnim {
   transition: 0.5s; }
   .contactoAnim:hover {
@@ -539,9 +531,6 @@ form {
 
 .carousel-control-next:active {
   opacity: .5; }
-
-.noBorderTop {
-  border-top: none; }
 
 /*Versiones de pantalla*/
 @media screen and (max-width: 1301px) {
@@ -577,15 +566,15 @@ form {
   .contenedorGrid .contenedorSobreMi {
     padding: 0 0 0 3rem;
     margin: 1rem; }
-  .imagenAlien {
+  .gridSeccionUnity .imagenAlien {
     padding: 5.5rem 4.625rem; }
-  .contenedorSeccionUnity {
+  .gridSeccionUnity .contenedorSeccionUnity {
     padding: 5.5rem 4.625rem; }
   .tamAlien {
     width: 3.7rem; }
   .contenedorSeccion {
     margin: 5.5rem 4.625rem; }
-  .contenedorTextos {
+  .contenedorTrabajo .contenedorTextos {
     padding: 3.125rem; }
   .containerDiseño {
     display: flex;
@@ -650,11 +639,11 @@ form {
   .logoImg {
     width: 35px;
     height: 35px; }
-  .imagenAlien {
+  .gridSeccionUnity .imagenAlien {
     padding: 1rem 1rem; }
   .tamAlien {
     width: 2.2rem; }
-  .contenedorSeccionUnity {
+  .gridSeccionUnity .contenedorSeccionUnity {
     padding: 2.8rem 2.8rem; }
   .gridSeccionUnity {
     display: grid;
@@ -673,7 +662,7 @@ form {
       transform: scale(0.95); }
   .tamImagenTrabajo {
     width: 100%; }
-  .contenedorTextos {
+  .contenedorTrabajo .contenedorTextos {
     margin-right: auto;
     padding: 1.2rem 0 1.2rem 0;
     width: 100%; }
@@ -681,7 +670,7 @@ form {
     width: 1.2rem; }
   nav ul li a {
     margin: 0; }
-  .contenedorUnity {
+  .gridSeccionUnity .contenedorUnity {
     padding: 0rem 2.8rem; }
   .contenedorSeccion {
     margin: 2.8rem 2.8rem;

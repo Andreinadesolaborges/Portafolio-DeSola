@@ -715,25 +715,25 @@ form {
 @media screen and (max-width: 1024px) {
 
     a {
-        font-size: 1.2rem;
+        font-size: $sizem-7;
         line-height: 1.6rem;
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: $sizem-10;
         line-height: 2.6rem;
     }
 
     h2 {
-        font-size: 1.6rem;
+        font-size: $sizem-9;
     }
 
     h3 {
-        font-size: 1.7rem;
+        font-size: $sizem-8;
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: $sizem-7;
         line-height: 1.6rem;
     }
 
@@ -792,25 +792,25 @@ form {
 @media screen and (max-width: 768px) {
 
     a {
-        font-size: 1rem;
+        font-size: $sizem-6;
         line-height: 1.3rem;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: $sizem-5;
         line-height: 1.9rem;
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: $sizem-7;
     }
 
     h3 {
-        font-size: 1rem;
+        font-size: $sizem-6;
     }
 
     p {
-        font-size: 1rem;
+        font-size: $sizem-6;
         line-height: 1.3rem;
     }
 
@@ -953,19 +953,19 @@ form {
     }
 
     input {
-        font-size: 1.5rem;
+        font-size: $sizem-5;
     }
 
     legend {
-        font-size: 1.5rem;
+        font-size: $sizem-5;
     }
 
     select {
-        font-size: 1.5rem;
+        font-size: $sizem-5;
     }
 
     label {
-        font-size: 1.5rem;
+        font-size: $sizem-5;
     }
 
     .carousel-control-next {
@@ -1014,30 +1014,30 @@ form {
     }
 
     h1 {
-        font-size: 1.1rem;
+        font-size: $sizem-4;
         line-height: 1.4rem;
     }
 
     h2 {
-        font-size: 0.85rem;
+        font-size: $sizem-3;
     }
 
     a {
-        font-size: 0.8rem;
+        font-size: $sizem-2;
     }
 
 
     h3 {
-        font-size: 0.75rem;
+        font-size: $sizem-1;
     }
 
     p {
-        font-size: 0.75rem;
+        font-size: $sizem-1;
         line-height: 1.1rem;
     }
 
     .nav-link {
-        font-size: 0.7rem;
+        font-size: $sizem-0;
     }
 
     .contenedorGrid .contenedorPrincipal {

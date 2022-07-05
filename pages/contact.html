@@ -53,14 +53,15 @@
     <main class="fondoContacto">
         <div class="contenedorSeccion">
             <h1 class="alinearTextoIzq espacioTitulo2">Contáctame</h1>
-            <form action="">
+
+            <form id="form" action="">
                 <fieldset>
                     <legend class="espacioTitulo2">Escríbeme cualquier duda o consulta</legend>
                     <div class="anchoFormulario">
-                        <input class="estiloForm" type="text" name="nombre" placeholder="Tu nombre">
+                        <input class="estiloForm" required type="text" id="name" name="nombre" placeholder="Tu nombre">
                     </div>
                     <div class="anchoFormulario">
-                        <input type="email" name="mail" placeholder="Tu email">
+                        <input required type="email" id="email" name="mail" placeholder="Tu email">
                     </div>
                     <div class="anchoFormulario">
                         <input class="estiloForm" type="text" name="mensaje" placeholder="Tu mensaje">
@@ -76,7 +77,7 @@
                     </div>
 
                     <div class="espacioTextoContacto">
-                        <label><input type="checkbox" value="checkbox1" class="inputCheck"> ¿Deseas recibir un
+                        <label><input type="checkbox" value="Si" class="inputCheck" name="check"> ¿Deseas recibir un
                             newsletter con actualizaciones?</label>
                     </div>
 
@@ -86,6 +87,7 @@
                     </div>
                 </fieldset>
             </form>
+            <a href="mailto:me@andreinadesola@gmail.com" id="trucazo"></a>
         </div>
     </main>
 
@@ -119,7 +121,22 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    <!--Formulario-->
+    <script>
+        const $form = document.querySelector('#form')
+        const $buttonMailto = document.querySelector('#trucazo')
+    
+        $form.addEventListener('submit', handleSubmit)
+    
+        function handleSubmit(event) {
+          event.preventDefault()
+          const form = new FormData(this)
+          $buttonMailto.setAttribute('href', `mailto:andreinadesola@gmail.com?subject=Nombre: ${form.get('nombre')}  - Correo: ${form.get('mail')} - Region: ${form.get('region')} - Newsletter: ${form.get('check')}&body=${form.get('mensaje')}`)
+          $buttonMailto.click()
+        }
+    </script>
 </body>
 
 </html>

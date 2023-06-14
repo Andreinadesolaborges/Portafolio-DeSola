@@ -512,7 +512,7 @@ form {
 /*Carrusel detalles Bootstrap*/
 .carousel-control-prev {
   background-color: black;
-  top: 40%;
+  top: 41%;
   height: 100px;
   width: 100px;
   border-radius: 100px;
@@ -523,7 +523,7 @@ form {
 
 .carousel-control-next {
   background-color: black;
-  top: 40%;
+  top: 41%;
   height: 100px;
   width: 100px;
   border-radius: 100px;

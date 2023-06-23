@@ -167,7 +167,7 @@ span {
     align-self: center;
     padding: 0 0 0 6.25rem; }
   .contenedorGrid .imagenRetrato {
-    width: 100%;
+    width: 90%;
     margin-left: 1.9rem;
     grid-area: imagenRetrato;
     /*horizontal*/

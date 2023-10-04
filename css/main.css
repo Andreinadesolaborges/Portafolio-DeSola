@@ -233,8 +233,8 @@ footer {
 /* Tamaños logo, iconos/ imágenes*/
 .logoImg {
   transition: 0.3s;
-  width: 57px;
-  height: 57px; }
+  width: 40px;
+  height: 40px; }
   .logoImg:hover {
     animation-name: animLink;
     animation-iteration-count: 3;
